@@ -3,6 +3,7 @@ import './App.css';
 
 function App() {
   const animals = ['lion', 'tiger', 'bear', 'monkey', 'panda', 'zebra', 'giraffe'];
+  const [newAnimal, setNewAnimal] = useState('');
 
   // Define a function to generate a random animal name
   // Return the JSX element to be rendered
@@ -30,21 +31,25 @@ function App() {
     const secondAnimal = removeFirstAnimal[NewRandomNumber];
     console.log('NeilTest - secondAnimal', secondAnimal);
 
-    // remove first two characters from animal1
+    // Remove the last two characters of the first animal’s name
+    const firstHalfOfNewAnimal = firstAnimal.substring(0, firstAnimal.length - 2);
+    console.log('NeilTest - firstHalfOfNewAnimal', firstHalfOfNewAnimal);
 
-    // remove last two characters from animal2
+    // Remove the first two characters of the second animal’s name
+    const secondHalfOfNewAnimal = secondAnimal.substring(2);
+    console.log('NeilTest - secondHalfOfNewAnimal', secondHalfOfNewAnimal);
 
-    // concatonate the two strings
+    // Concatonate the two strings to get the new animal name
+    const newAnimal = firstHalfOfNewAnimal + secondHalfOfNewAnimal;
+    console.log('NeilTest - secondHalfOfNewAnimal', newAnimal);
 
-    // display the new string
-
-
+    setNewAnimal(newAnimal);
   }
 
 
   return (
     <div className="App">
-      <p>animal name here</p>
+        <p>{newAnimal}</p>
       <button onClick={newAnimalClickHandler}>new animal</button>
     </div>
   );
