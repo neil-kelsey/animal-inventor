@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+import {useState} from 'react';
 import './App.css';
 
 function App() {
@@ -8,20 +8,27 @@ function App() {
   // Return the JSX element to be rendered
 
   const newAnimalClickHandler = () => {
+    console.log('NeilTest - animals', animals);
+
     // Create a random number within the range of the array - 0-6
     const randomNumber = Math.floor(Math.random() * animals.length);
     console.log('NeilTest - randomNumber', randomNumber);
 
-    // Take random value from array
+    // Take random number and pick that item from the array - this is our first animal
     const firstAnimal = animals[randomNumber];
     console.log('NeilTest - firstAnimal', firstAnimal);
+
+    // Remove first animal from the available animals
+    const removeFirstAnimal = animals.filter((item, index) => item !== firstAnimal);
+    console.log('NeilTest - removeFirstAnimal', removeFirstAnimal);
     
+    // Create a new random number within the range of the updated array - 0-5
+    const NewRandomNumber = Math.floor(Math.random() * removeFirstAnimal.length);
+    console.log('NeilTest - NewRandomNumber', NewRandomNumber);
 
-    // take another random item from array
-
-    // ensure animal1 doesn't match animal2
-
-    // if it does - pick another animal
+    // Take the new random number and pick that item from the array - this is our second animal
+    const secondAnimal = removeFirstAnimal[NewRandomNumber];
+    console.log('NeilTest - secondAnimal', secondAnimal);
 
     // remove first two characters from animal1
 
