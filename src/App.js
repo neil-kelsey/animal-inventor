@@ -5,9 +5,6 @@ function App() {
   const animals = ['lion', 'tiger', 'bear', 'monkey', 'panda', 'zebra', 'giraffe'];
   const [newAnimal, setNewAnimal] = useState('');
 
-  // Define a function to generate a random animal name
-  // Return the JSX element to be rendered
-
   const newAnimalClickHandler = () => {
     console.log('NeilTest - animals', animals);
 
